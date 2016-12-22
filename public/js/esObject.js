@@ -17,16 +17,18 @@ define([
                 if(esObject.hasOwnProperty(k) && typeof esObject != "function")
                     esObject[k]=v;
             };
-            esObject.get=function(k){
-                if(esObject.hasOwnProperty(k)  && typeof esObject != "function")
-                    return esObject[k];
-            };
-            
-            esObject.createView=function(d){
-                var view={};
-                
-                return view;
-            };
+        esObject.get=function(k){
+            if(esObject.hasOwnProperty(k)  && typeof esObject != "function")
+                return esObject[k];
+        };            
+        esObject.createView=function(d){
+            var view = new dhtmlXLayoutObject({
+                parent:     "esBody",    
+                pattern:    "3L",          
+            });
+
+            return view;
+        };
 
         return esObject;
 });
